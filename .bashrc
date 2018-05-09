@@ -13,6 +13,7 @@ alias be='bundle exec'
 # React
 alias cra='create-react-app'
 alias ns='npm start'
+alias crna'create-react-native-app'
 alias rni='react-native init'
 
 # git
