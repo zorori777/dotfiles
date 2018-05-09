@@ -10,6 +10,11 @@ alias rc='rails c'
 alias bi='bundle install --path vendor/bundle '
 alias be='bundle exec'
 
+# React
+alias cra='create-react-app'
+alias ns='npm start'
+alias rni='react-native init'
+
 # git
 source ~/dotfiles/.git-prompt.sh
 source ~/dotfiles/.git-completion.bash
