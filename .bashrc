@@ -25,5 +25,5 @@ export PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
 # Docker
 alias dcu='docker-compose up'
-alias dcud='docker-comose up -d'
+alias dcud='docker-compose up -d'
 alias dcb='docker-compose build'
