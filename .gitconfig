@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/watasan/.gitignore_global
+	excludesfile = /Users/watanabetakumi/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -7,7 +7,7 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	name = zorori777
+	name = 渡邉拓未
 	email = e2fde7ded7anxbne05se@yahoo.co.jp
 [alias]
     st = status
@@ -15,6 +15,9 @@
     ch = checkout
     br = branch
     g = git 
+    refresh = checkout .
+    soft = reset --soft
+    ammend = commit --amend 
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
