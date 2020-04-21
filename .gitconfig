@@ -1,25 +1,55 @@
+[user]
+	email = e2fde7ded7anxbne05se@yahoo.co.jp
+	name = zorori777
 [core]
 	excludesfile = /Users/watanabetakumi/.gitignore_global
+[diff]
+  tool = meld
+[difftool]
+  prompt = false
+[difftool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
+[merge]
+  tool = meld
+[mergetool]
+  prompt = false
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"[commit]
+	template = /Users/watanabetakumi/.stCommitMsg
+[alias]
+  sweep = "!sh -c 'git branch | grep $1 | xargs git branch -d' -"
+  br = branch
+  st = status
+  cm = commit -m
+  ch = checkout
+  chb = checkout -b
+  rename = branch -m
+  chtag = "!sh -c 'git checkout -b refs/tags/$1 refs/tags/$1' -"
+  refresh = "!sh -c 'git clean -f -d && git reset --hard'"
+  pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
+  wip = "!f () { git commit -m \"[WIP] $1\"; };f"
+  cmb = "!f () { git commit -m \"$(git symbolic-ref --short HEAD) $1\"; };f"
+  feature = "!f () { git checkout develop; git pull; git checkout -b \"feature/$1\"; };f"
+  release = "!f () { ~/.git-scripts/release.sh $1; };f"
+  hotfix = "!f () { ~/.git-scripts/hotfix.sh $1; };f"
+  meld = "!f () { git difftool -d \"$(git symbolic-ref --short HEAD)\" $1; };f"
+  close = "!f () { ~/.git-scripts/close.sh $1; };f"
+  releaselog = "log --tags --simplify-by-decoration --pretty=\"format:%ai %d\""
+
+[credential]
+	helper = osxkeychain
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[user]
-	name = 渡邉拓未
-	email = e2fde7ded7anxbne05se@yahoo.co.jp
-[alias]
-    st = status
-    co = commit
-    ch = checkout
-    br = branch
-    g = git 
-    refresh = checkout .
-    soft = reset --soft
-    ammend = commit --amend 
 [filter "lfs"]
+	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-	clean = git-lfs clean -- %f
+[commit]
+	template = /Users/watanabetakumi/.stCommitMsg
