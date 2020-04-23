@@ -2,7 +2,7 @@
 	email = e2fde7ded7anxbne05se@yahoo.co.jp
 	name = zorori777
 [core]
-	excludesfile = /Users/watanabetakumi/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
 [diff]
   tool = meld
 [difftool]
@@ -17,7 +17,7 @@
 [mergetool "meld"]
   trustExitCode = true
   cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"[commit]
-	template = /Users/watanabetakumi/.stCommitMsg
+	template = $HOME/.stCommitMsg
 [alias]
   sweep = "!sh -c 'git branch | grep $1 | xargs git branch -d' -"
   br = branch
@@ -52,4 +52,4 @@
 	process = git-lfs filter-process
 	required = true
 [commit]
-	template = /Users/watanabetakumi/.stCommitMsg
+	template = $HOME/.stCommitMsg
