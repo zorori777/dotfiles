@@ -30,6 +30,11 @@ zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git # <- なんかおまじないらしい
 zinit cdclear -q
 
+# git-completionの読み込み
+fpath=(~/.zsh $fpath)
+zstyle ':completion:*:*:git:*' script ~/Project/dotfiles/git-completion.bash
+autoload -Uz compinit && compinit
+
 # 補完
 zinit light zsh-users/zsh-autosuggestions
 
