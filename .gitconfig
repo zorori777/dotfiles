@@ -26,6 +26,8 @@
   ch = checkout
   chb = checkout -b
   rename = branch -m
+  sd = reset --soft
+  hd = reset --hard
   chtag = "!sh -c 'git checkout -b refs/tags/$1 refs/tags/$1' -"
   refresh = "!sh -c 'git clean -f -d && git reset --hard'"
   pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"

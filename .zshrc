@@ -46,7 +46,8 @@ zinit light zdharma/history-search-multi-word
 
 # クローンしたGit作業ディレクトリで、コマンド `git open` を実行するとブラウザでGitHubが開く
 zinit light paulirish/git-open
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+source ~/Project/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
