@@ -1,6 +1,6 @@
 [user]
-	email = e2fde7ded7anxbne05se@yahoo.co.jp
-	name = zorori777
+	email = work.takumi@gmail.com
+	name = takumi_watanabe
 [core]
 	excludesfile = $HOME/.gitignore_global
 [diff]
@@ -39,6 +39,8 @@
   meld = "!f () { git difftool -d \"$(git symbolic-ref --short HEAD)\" $1; };f"
   close = "!f () { ~/.git-scripts/close.sh $1; };f"
   releaselog = "log --tags --simplify-by-decoration --pretty=\"format:%ai %d\""
+  delete-merged-branch = "!f () { echo Start!: $(git br | wc -l) branches;  git checkout $1; git branch --merged|egrep -v '\\*|develop|master|main'|xargs git branch -d; echo Finished!: $(git br | wc -l) branches; };f"
+delete-merged-branch--force = "!f () { echo Start!: $(git br | wc -l) branches;  git checkout $1; git branch --merged|egrep -v '\\*|develop|master|main'|xargs git branch -D; echo Finished!: $(git br | wc -l) branches; };f"
 
 [credential]
 	helper = osxkeychain
